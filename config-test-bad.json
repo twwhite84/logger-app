@@ -1,0 +1,18 @@
+{
+    "sites": [
+        {
+            "url": "https://www.google.com"
+        },
+        {
+            "url": "https://www.fakewebsite.xyz",
+            "regex": "my regex string"
+        },
+        {
+            "url": "htp://www.badurl",
+            "regex": "my regex string"
+        },
+        {
+            "regex": "my regex string"
+        }
+    ]
+}

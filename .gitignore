@@ -1,0 +1,5 @@
+.venv
+certs
+.vscode
+.mypy_cache
+__pycache__
