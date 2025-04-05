@@ -1,7 +1,7 @@
-from ILogger import ILogger, StatusType
 from colored import Fore, Style
 from typing import Dict
 import datetime
+from loggers.ILogger import ILogger, StatusType
 
 
 class ConsoleLogger(ILogger):

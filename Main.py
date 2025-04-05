@@ -4,10 +4,12 @@ import time
 import requests
 from typing import List, Dict, Union, cast
 import re
-from loggers.ILogger import ILogger, StatusType
+
+# from loggers.ILogger import ILogger, StatusType
 from loggers.ConsoleLogger import ConsoleLogger
 from loggers.DiskLogger import DiskLogger
 from URLListReader import URLListReader
+from loggers.ILogger import ILogger, StatusType
 
 
 def pingSite(

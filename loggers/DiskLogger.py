@@ -1,6 +1,6 @@
-from ILogger import ILogger, StatusType
 from typing import Dict
 import datetime
+from loggers.ILogger import ILogger, StatusType
 
 
 class DiskLogger(ILogger):
