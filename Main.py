@@ -4,8 +4,6 @@ import time
 import requests
 from typing import List, Dict, Union, cast
 import re
-
-# from loggers.ILogger import ILogger, StatusType
 from loggers.ConsoleLogger import ConsoleLogger
 from loggers.DiskLogger import DiskLogger
 from URLListReader import URLListReader
@@ -71,7 +69,7 @@ def main() -> None:
         lock: threading.Lock = threading.Lock()
         threads: list[threading.Thread] = []
         freq_s: int = 10
-        loggers: List[ILogger] = [ConsoleLogger()]
+        loggers: List[ILogger] = [ConsoleLogger(), DiskLogger("logs")]
 
         # start check cycle and logging
         for site in sites:
