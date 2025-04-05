@@ -10,15 +10,9 @@ class URLError(ValueError):
         super().__init__(url)
 
 
-class ConfigReader:
+class URLListReader:
     def __init__(self) -> None:
         self.sites: List[Dict[str, Union[str | None]]] = []
-
-        # I used a schema generator for this, but the default output was buggy.
-        # So I also ran it through GPT asking why it allowed missing urls when
-        # given a list of more than a couple of sites. Told me I need to use
-        # the "anyOf" modifier. Doing that seems to have fixed the bug.
-        # https://www.liquid-technologies.com/online-json-to-schema-converter
         self.schema = {
             "type": "object",
             "properties": {

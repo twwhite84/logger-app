@@ -3,9 +3,11 @@ import threading
 import time
 import requests
 from typing import List, Dict, Union, cast
-from Loggers import *
-from ConfigReader import ConfigReader
 import re
+from loggers.ILogger import ILogger, StatusType
+from loggers.ConsoleLogger import ConsoleLogger
+from loggers.DiskLogger import DiskLogger
+from URLListReader import URLListReader
 
 
 def pingSite(
@@ -59,7 +61,7 @@ def main() -> None:
         if len(sys.argv) <= 1:
             raise ValueError("PLEASE SPECIFY A JSON CONFIG FILE AS ARGUMENT")
         filename: str = sys.argv[1]
-        cr: ConfigReader = ConfigReader()
+        cr: URLListReader = URLListReader()
         cr.load(filename)
         sites: List[Dict[str, Union[str | None]]] = cr.getSites()
 

@@ -1,6 +1,6 @@
 import unittest
 import requests
-from ConfigReader import ConfigReader
+from URLListReader import URLListReader
 
 
 # placeholder
@@ -17,7 +17,7 @@ class Tests(unittest.TestCase):
 
     def testConfigBadFile(self) -> None:
         with self.assertRaises(Exception) as cm:
-            cr: ConfigReader = ConfigReader()
+            cr: URLListReader = URLListReader()
             cr.load("config-test-bad.json")
         ex = cm.exception
         self.assertEqual(ex.args[0], "CONFIG FILE ERROR: INVALID URL\n")
