@@ -1,24 +1,18 @@
-# Aiven Web Monitor Homework
+# Website Availability Logger
 
-This app consists of two runnable files, Main.py and LogReader.py
+This app monitors website status by pinging given URLs, categorising the response and logging to console, disk or a Kafka service.
 
 To set up:
 - Clone this repo to a new directory
 - Set up a new venv virtual environment
 - Install dependencies from the manifest: pip install -r requirements.txt
-- You need to modify Loggers.py lines 59-62 to be your correct Kafka service details
-- These details also need to be updated in lines 3-6 of LogReader.py
-- By default, Kafka certificates are expected to be in the directory "certs"
+- Default loggers are the console and disk logger, this can be changed on Main.py line 72
+- To use the Kafka logger, add it in Main.py line 72 with the service URL, topic name and certificates directory
 
 To use:
 - Make a new json file with a list of websites and optional regexes. For demonstration see config-example.json
 - To start monitoring your websites, run python Main.py your-config-file.json
 - By default, logging will be to console and to Kafka every 10 seconds.
-- A class DiskLogger() can be added on line 70 of Main.py
-- The monitoring frequency can be adjust on line 69 of Main.py
-- To consume what has been uploaded to Kafka, run LogReader.py in a new terminal tab
-- LogReader will poll Kafka until you press Ctrl+C / Command+C
-
-Regarding the email on AI use, I did use GPT to help debug a JSON schema. I copied a generated
-schema into it and asked why it was missing required urls. It informed me about use of the "anyOf"
-modifier, and using this seems to have fixed the bug. I have left a note in ConfigReader.py about this.
+- The monitoring frequency can be adjusted on Main.py line 71
+- To check your Kafka log, run KafkaReader.py <service_url> <topic_name> <certs_dir>
+- KafkaReader will poll your Kafka service until you press Ctrl+C / Command+C
