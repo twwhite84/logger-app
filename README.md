@@ -12,7 +12,7 @@ To set up:
 To use:
 - Make a new json file with a list of websites and optional regexes. For demonstration see config-example.json
 - To start monitoring your websites, run python Main.py your-config-file.json
-- By default, logging will be to console and to Kafka every 10 seconds.
+- By default, logging will be to console and disk every 10 seconds.
 - The monitoring frequency can be adjusted on Main.py line 71
 - To check your Kafka log, run KafkaReader.py <service_url> <topic_name> <certs_dir>
 - KafkaReader will poll your Kafka service until you press Ctrl+C / Command+C
