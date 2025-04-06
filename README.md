@@ -1,6 +1,6 @@
 # Website Availability Logger
 
-This app monitors website status by pinging given URLs, categorising the response and logging to console, disk or a Kafka service. Software development concepts it demonstrates include use of static types (via mypy); object-oriented design with classes and interfaces; and interfacing with a cloud-based service.
+This app monitors website status by pinging given URLs, categorising the response and logging to console, disk or a Kafka service. Software development concepts it demonstrates include use of static types (via mypy); object-oriented design with classes and interfaces; interfacing with a cloud-based service; and unit testing.
 
 To set up:
 - Clone this repo to a new directory
